@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression Matcher - Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 4px 4px  #323232;
+            border: 2px solid #323232;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 30px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 0;
+        }
+            .textbox {
+                --input-focus: #0d0f29;
+                --font-color: #323232;
+                --font-color-sub: #666;
+                --bg-color: #fff;
+                --main-color: #323232;
+                width: 80%;
+                height: 120px;
+                border-radius: 5px;
+                border: 2px solid var(--main-color);
+                background-color: var(--bg-color);
+                box-shadow: 4px 4px var(--main-color);
+                font-size: 15px;
+                font-weight: 600;
+                color: var(--font-color);
+                padding: 5px 10px;
+                outline: none;
+                margin-top: 5px;
+                overflow-y: auto;
+                scroll-behavior: smooth;
+                
+                /* Custom scrollbar styles */
+                scrollbar-width: thin; /* for Firefox */
+            }
+        
+            /* Custom scrollbar styles for WebKit browsers (Chrome, Safari) */
+            .textbox::-webkit-scrollbar {
+                width: 10px;
+            }
+        
+            .textbox::-webkit-scrollbar-thumb {
+                background-color: #888;
+                border-radius: 5px;
+            }
+        
+            .textbox::-webkit-scrollbar-track {
+                background-color: #f0f0f0;
+            }
+            .textbox::-webkit-scrollbar-button {
+                display: none;
+            }
+        p{
+            padding: 5px 10px;
+        }
+        .highlight {
+            background-color: rgb(255, 251, 0);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .input_heading{
+            width: 80%;
+        }
+        ul {
+            --input-focus: #0d0f29;
+            --font-color: #323232;
+            --font-color-sub: #666;
+            --bg-color: #fff;
+            --main-color: #323232;
+            list-style-type: none;
+            padding: 5px 10px;
+            width: 80%;
+            height: 120px;
+            border-radius: 5px;
+            border: 2px solid var(--main-color);
+            background-color: var(--bg-color);
+            box-shadow: 4px 4px var(--main-color);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--font-color);
+            padding: 5px 10px;
+            outline: none;
+            overflow-y: scroll;
+        }
+        li {
+            margin-bottom: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Regular Expression Matcher - Results</h1>
+        <div class="input_heading">
+            <h2>Input Text:</h2>
+        </div>
+        <div class="textbox">
+            <p>
+                {{ text_to_search | safe }}
+            </p>
+        </div>
+        <div class="input_heading" style="margin-top: 20px;">
+            <h2>All Matching Texts:</h2>
+        </div>
+        <ul>
+            {% for match in matches %}
+                <li>{{ match }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

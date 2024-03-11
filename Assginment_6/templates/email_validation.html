@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 4px 4px  #323232;
+            border: 2px solid #323232;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .valid {
+            color: green;
+        }
+        .invalid {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Validation Result</h1>
+        <p>Email: {{ email }}</p>
+        <div class="result">
+            {% if is_valid %}
+                <span class="valid">Valid Email Address</span>
+            {% else %}
+                <span class="invalid">Invalid Email Address</span>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression Matcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 4px 4px  #323232;
+            border: 2px solid #323232;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        form {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        .input {
+            --input-focus: #0d0f29;
+            --font-color: #323232;
+            --font-color-sub: #666;
+            --bg-color: #fff;
+            --main-color: #323232;
+            width: 80%;
+            height: 40px;
+            border-radius: 5px;
+            border: 2px solid var(--main-color);
+            background-color: var(--bg-color);
+            box-shadow: 4px 4px var(--main-color);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--font-color);
+            padding: 5px 10px;
+            outline: none;
+        }
+        #text_to_search{
+            height: 100px;
+            margin-top: 10px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            
+        }
+        .input::placeholder {
+            color: var(--font-color-sub);
+            opacity: 0.8;
+            font-size: 18px;
+        }
+        .input:focus {
+            border: 2px solid var(--input-focus);
+        }
+        
+        .btn_cont {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center; 
+            margin-top: 30px;
+          }
+          .btn_cont button {
+            padding: 10px;
+            font-size: 1.1rem;
+            position: relative;
+            background-color: wh ;
+            color: #162a4b;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 4px 4px #0b2447;
+            border: 1px solid ;
+            transition: transform 0.2s, box-shadow 0.2s;
+          }
+          .btn_cont button:active{
+            box-shadow: 0 0 0;
+            transform: translateX(4px) translateY(4px);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Regular Expression Matcher</h1>
+        <form method="POST">
+            <!-- <label for="regex_pattern">Regular Expression Pattern:</label> -->
+            <input type="text" id="regex_pattern" name="regex_pattern" class="input" placeholder="Regular Expression">
+            <!-- <label for="text_to_search">Text to Search:</label> -->
+            <textarea id="text_to_search" name="text_to_search" rows="4" cols="50" class="input" placeholder="Enter the text"></textarea>
+            <div class="btn_cont">
+                <button type="submit">Match Regular Expression</button>
+            </div>
+        </form>
+        {% if error_message %}
+            <p>{{ error_message }}</p>
+        {% endif %}
+        <h1>Email Validator</h1>
+            <form method="POST" action="/validate_email">
+                <input type="text" placeholder="Email" name="email" class="input">
+                <div class="btn_cont">
+                    <button type="submit">Validate Email</button>
+                </div>  
+            </form>
+
+    </div>
+</body>
+</html>
